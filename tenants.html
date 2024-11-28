@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قائمة المستأجرين</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>قائمة المستأجرين</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>رقم</th>
+                    <th>اسم المستأجر</th>
+                    <th>رقم الجريدة</th>
+                    <th>رقم الحوض</th>
+                    <th>عدد الفدادين</th>
+                    <th>عدد القيراط</th>
+                    <th>عدد الأسهم</th>
+                    <th>التعديات</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tenant in tenants %}
+                <tr>
+                    <td>{{ tenant.id }}</td>
+                    <td>{{ tenant.tenant_name }}</td>
+                    <td>{{ tenant.land_paper }}</td>
+                    <td>{{ tenant.plot_number }}</td>
+                    <td>{{ tenant.feddan }}</td>
+                    <td>{{ tenant.qirat }}</td>
+                    <td>{{ tenant.share }}</td>
+                    <td>{{ tenant.violations }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/" class="button">إضافة مستأجر جديد</a>
+    </div>
+</body>
+</html>
 
