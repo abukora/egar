@@ -3,26 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>برنامج المستاجرين</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>إضافة مستأجر</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>مرحبا بك في برنامج المستاجرين</h1>
+        <h1>إضافة مستأجر جديد</h1>
         <form method="POST" action="/add_tenant">
-            <div class="form-group">
-                <label for="name">اسم المستأجر</label>
-                <input type="text" id="name" name="name" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="unit">الوحدة السكنية</label>
-                <input type="text" id="unit" name="unit" class="form-control">
-            </div>
-            <div class="form-group">
-                <label for="phone">رقم الهاتف</label>
-                <input type="text" id="phone" name="phone" class="form-control">
-            </div>
-            <button type="submit" class="btn btn-primary">إضافة</button>
+            <label for="tenant_name">اسم المستأجر:</label>
+            <input type="text" id="tenant_name" name="tenant_name" required>
+
+            <label for="land_paper">رقم الجريدة:</label>
+            <input type="text" id="land_paper" name="land_paper" required>
+
+            <label for="plot_number">رقم الحوض:</label>
+            <input type="text" id="plot_number" name="plot_number" required>
+
+            <label for="feddan">عدد الفدادين:</label>
+            <input type="number" id="feddan" name="feddan" required>
+
+            <label for="qirat">عدد القيراط:</label>
+            <input type="number" id="qirat" name="qirat" required>
+
+            <label for="share">عدد الأسهم:</label>
+            <input type="number" id="share" name="share" required>
+
+            <label for="violations">التعديات:</label>
+            <textarea id="violations" name="violations"></textarea>
+             <!-- إضافة حقل لاختيار المرفقات -->
+            <label for="attachments">اختار المرفقات:</label>
+           <input type="file" id="attachments" name="attachments" multiple>
+
+            <button type="submit">إضافة</button>
         </form>
     </div>
 </body>
