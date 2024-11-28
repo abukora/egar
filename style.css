@@ -25,48 +25,34 @@ form {
 }
 
 label {
-
     font-weight: bold;
     color: #333;
-    text-align: right;  /* محاذاة النص داخل التسمية إلى اليمين */
-    float: right; /* جعل التسمية تطفو إلى اليمين */
-    margin-left: 10px; /* إضافة مسافة صغيرة من الجهة اليسرى إذا لزم الأمر */
 }
 
-input, textarea, button {
+input, button {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-/* تحسين مظهر الزر */
 button {
     background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease; /* إضافة تأثير الانتقال */
 }
 
 button:hover {
     background-color: #45a049;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة تأثير الظل عند التحويم */
-    transform: translateY(-2px); /* رفع الزر عند التحويم */
 }
 
-/* تقليل حجم الحقول على الشاشات الكبيرة */
-input, textarea, button {
-    font-size: 15px; /* تقليل حجم الخط */
+.success {
+    color: green;
+    font-weight: bold;
 }
 
-@media screen and (max-width: 600px) {
-    .container {
-        width: 100%;
-        padding: 15px;
-    }
-
-    input, textarea, button {
-        font-size: 14px;
-    }
+.error {
+    color: red;
+    font-weight: bold;
 }
