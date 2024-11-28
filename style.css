@@ -1,23 +1,21 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
 .container {
-    width: 80%;
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 900px;
+    margin: 50px auto;
     padding: 20px;
     background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
     text-align: center;
-    color: #4CAF50;
+    color: #333;
 }
 
 form {
@@ -26,26 +24,49 @@ form {
     gap: 15px;
 }
 
-.form-group label {
+label {
+
     font-weight: bold;
+    color: #333;
+    text-align: right;  /* محاذاة النص داخل التسمية إلى اليمين */
+    float: right; /* جعل التسمية تطفو إلى اليمين */
+    margin-left: 10px; /* إضافة مسافة صغيرة من الجهة اليسرى إذا لزم الأمر */
 }
 
-.form-control {
+input, textarea, button {
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-.btn {
-    padding: 10px 20px;
+/* تحسين مظهر الزر */
+button {
     background-color: #4CAF50;
-    color: #fff;
+    color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease; /* إضافة تأثير الانتقال */
 }
 
-.btn:hover {
+button:hover {
     background-color: #45a049;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* إضافة تأثير الظل عند التحويم */
+    transform: translateY(-2px); /* رفع الزر عند التحويم */
+}
+
+/* تقليل حجم الحقول على الشاشات الكبيرة */
+input, textarea, button {
+    font-size: 15px; /* تقليل حجم الخط */
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    input, textarea, button {
+        font-size: 14px;
+    }
 }
