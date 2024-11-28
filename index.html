@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>إضافة مستأجر</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="style.css">  <!-- رابط لملف CSS الموجود في نفس المجلد -->
 </head>
 <body>
     <div class="container">
         <h1>إضافة مستأجر جديد</h1>
+
+        <!-- عرض رسائل التنبيه -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
         <form method="POST" action="/add_tenant">
             <label for="tenant_name">اسم المستأجر:</label>
             <input type="text" id="tenant_name" name="tenant_name" required>
@@ -30,9 +42,6 @@
 
             <label for="violations">التعديات:</label>
             <textarea id="violations" name="violations"></textarea>
-             <!-- إضافة حقل لاختيار المرفقات -->
-            <label for="attachments">اختار المرفقات:</label>
-           <input type="file" id="attachments" name="attachments" multiple>
 
             <button type="submit">إضافة</button>
         </form>
